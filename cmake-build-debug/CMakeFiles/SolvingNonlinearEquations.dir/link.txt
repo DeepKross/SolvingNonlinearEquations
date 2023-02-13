@@ -1,0 +1,3 @@
+"D:\Clion\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\SolvingNonlinearEquations.dir/objects.a
+D:\Progs\MinGW\bin\ar.exe qc CMakeFiles\SolvingNonlinearEquations.dir/objects.a @CMakeFiles\SolvingNonlinearEquations.dir\objects1.rsp
+D:\Progs\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\SolvingNonlinearEquations.dir/objects.a -Wl,--no-whole-archive -o SolvingNonlinearEquations.exe -Wl,--out-implib,libSolvingNonlinearEquations.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\SolvingNonlinearEquations.dir\linklibs.rsp
