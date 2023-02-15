@@ -86,6 +86,25 @@ void newthon(equation eq, double eps){
     }
 }
 
+void simpleIteration(equation eq, double eps){
+    double xprev, xn;
+    cout << "Insert initial x0: "; cin >> xprev;
+    cout << "Insert A,B,C,D in the (Ax^2 + Bx + C)^1/3 function." << endl;
+    double a; cout << "A: "; cin >> a;
+    double b; cout << "B: "; cin >> b;
+    double c; cout << "C: "; cin >> c;
+
+    int i = 1;
+
+    while(true){
+        xn = cbrt(a * xprev*xprev + b * xprev + c);
+        if(abs(xn - xprev) < eps)break;
+        xprev = xn;
+        cout << i << "iteration: " << xn << " " << value(eq, xn) << endl;
+        i++;
+    }
+}
+
 int main() {
     while(true){
         equation eq = setParams();
@@ -100,6 +119,9 @@ int main() {
         }
         else if(method == 2){
             newthon(eq,eps);
+        }
+        else if(method == 3){
+            simpleIteration(eq,eps);
         }
     }
     return 0;
