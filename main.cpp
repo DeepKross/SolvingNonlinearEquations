@@ -113,7 +113,7 @@ int main() {
 
         int method;
         cout << "Choose method for solving your nonlinear equation. Enter [1] for bisection method. Enter [2] for "
-                "Newthon method and [3] for simple iteration method: "; cin >> method;
+                "Newton method and [3] for simple iteration method: "; cin >> method;
         if(method == 1){
             bisection(eq,eps);
         }
