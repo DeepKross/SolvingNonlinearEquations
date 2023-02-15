@@ -88,7 +88,7 @@ void newthon(equation eq, double eps){
 
 void simpleIteration(equation eq, double eps){
     double xprev, xn;
-    cout << "Insert initial x0: "; cin >> xprev;
+    cout << "Insert initial approach x0: "; cin >> xprev;
     cout << "Insert A,B,C,D in the (Ax^2 + Bx + C)^1/3 function." << endl;
     double a; cout << "A: "; cin >> a;
     double b; cout << "B: "; cin >> b;
