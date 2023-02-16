@@ -9,4 +9,3 @@ Firstly enter A B C D parametrs. Then choose precision epsylon for solving equat
 ---Enter initial guess x0.<br>
 -For Simple iteration methodL <br>
 ---Set initial aproach x0
----Insert A,B,C,D in the (Ax^2 + Bx + C)^1/3 function.
