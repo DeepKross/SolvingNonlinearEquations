@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-//#include <iomanip>
+
 
 using namespace std;
 
@@ -35,7 +35,7 @@ double setPrecision(){
 }
 
 double value( equation eq, double x){
-    double res = (eq.a * x*x*x) + ( eq.b * x*x) + ( eq.c * x) + eq.d;
+    double res = (eq.a * x * x * x) + ( eq.b * x * x) + ( eq.c * x) + eq.d;
     return res;
 }
 
@@ -53,7 +53,6 @@ void bisection(equation eq, double eps) {
 
     // Counting the num of iterations
     int nMAX = log2( (xr-xl) / eps);
-    cout << nMAX << endl;
 
     cout << "1iteration: " << xl << " " << xr << " "  << endl;
 
@@ -68,6 +67,9 @@ void bisection(equation eq, double eps) {
         else if(result > 0) {
             xr = midpt;
         }
+        else {
+            break;
+        }
         cout << i+2 << "iteration: " << xl << " " << xr << endl;
     }
     cout << "Root for the polynomial is " << midpt << endl;
@@ -75,7 +77,7 @@ void bisection(equation eq, double eps) {
 
 void newthon(equation eq, double eps){
     double x;
-    cout << "Insert initial x: "; cin >> x;
+    cout << "Insert initial guess x0: "; cin >> x;
 
     int i = 2;
     cout << "1iteration: " << x << " " << value(eq, x) << endl;
@@ -89,10 +91,9 @@ void newthon(equation eq, double eps){
 void simpleIteration(equation eq, double eps){
     double xprev, xn;
     cout << "Insert initial approach x0: "; cin >> xprev;
-    cout << "Insert A,B,C,D in the (Ax^2 + Bx + C)^1/3 function." << endl;
-    double a; cout << "A: "; cin >> a;
-    double b; cout << "B: "; cin >> b;
-    double c; cout << "C: "; cin >> c;
+    double a = (eq.b / eq.a) * -1;
+    double b = (eq.c / eq.a) * -1;
+    double c = (eq.d / eq.a) * -1;
 
     int i = 1;
 
